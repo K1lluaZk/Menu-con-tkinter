@@ -705,67 +705,67 @@ root.title("Menú")
 root.geometry("400x500")
 
 
-button1 = tk.Button(root, text="Ejercicio 1", command=run_ejercicio1)
+button1 = tk.Button(root, text="Ejercicio 1", cursor="hand2", command=run_ejercicio1)
 button1.grid(row=1, column=0, sticky="ew", padx=10, pady=5)
 
-button2 = tk.Button(root, text="Ejercicio 2", command=run_ejercicio2)
+button2 = tk.Button(root, text="Ejercicio 2", cursor="hand2", command=run_ejercicio2)
 button2.grid(row=2, column=0, sticky="ew", padx=10, pady=5)
 
-button3 = tk.Button(root, text="Ejercicio 3", command=run_ejercicio3)
+button3 = tk.Button(root, text="Ejercicio 3", cursor="hand2", command=run_ejercicio3)
 button3.grid(row=3, column=0, sticky="ew", padx=10, pady=5)
 
-button4 = tk.Button(root, text="Ejercicio 4", command=run_ejercicio4)
+button4 = tk.Button(root, text="Ejercicio 4", cursor="hand2", command=run_ejercicio4)
 button4.grid(row=4, column=0, sticky="ew", padx=10, pady=5)
 
-button5 = tk.Button(root, text="Ejercicio 5", command=run_ejercicio5)
+button5 = tk.Button(root, text="Ejercicio 5", cursor="hand2", command=run_ejercicio5)
 button5.grid(row=5, column=0, sticky="ew", padx=10, pady=5)
 
-button6 = tk.Button(root, text="Ejercicio 6", command=run_ejercicio6)
+button6 = tk.Button(root, text="Ejercicio 6", cursor="hand2", command=run_ejercicio6)
 button6.grid(row=6, column=0, sticky="ew", padx=10, pady=5)
 
-button7 = tk.Button(root, text="Ejercicio 7", command=run_ejercicio7)
+button7 = tk.Button(root, text="Ejercicio 7", cursor="hand2", command=run_ejercicio7)
 button7.grid(row=7, column=0, sticky="ew", padx=10, pady=5)
 
-button8 = tk.Button(root, text="Ejercicio 8", command=run_ejercicio8)
+button8 = tk.Button(root, text="Ejercicio 8", cursor="hand2", command=run_ejercicio8)
 button8.grid(row=8, column=0, sticky="ew", padx=10, pady=5)
 
-button9 = tk.Button(root, text="Ejercicio 9", command=run_ejercicio9)
+button9 = tk.Button(root, text="Ejercicio 9", cursor="hand2", command=run_ejercicio9)
 button9.grid(row=9, column=0, sticky="ew", padx=10, pady=5)
 
-button10 = tk.Button(root, text="Ejercicio 10", command=run_ejercicio10)
+button10 = tk.Button(root, text="Ejercicio 10", cursor="hand2", command=run_ejercicio10)
 button10.grid(row=10, column=0, sticky="ew", padx=10, pady=5)
 
-button11 = tk.Button(root, text="Ejercicio 11", command=run_ejercicio11)
+button11 = tk.Button(root, text="Ejercicio 11", cursor="hand2", command=run_ejercicio11)
 button11.grid(row=1, column=1, sticky="ew", padx=10, pady=5)
 
-button12 = tk.Button(root, text="Ejercicio 12", command=run_ejercicio12)
+button12 = tk.Button(root, text="Ejercicio 12", cursor="hand2", command=run_ejercicio12)
 button12.grid(row=2, column=1, sticky="ew", padx=10, pady=5)
 
-button13 = tk.Button(root, text="Ejercicio 13", command=run_ejercicio13)
+button13 = tk.Button(root, text="Ejercicio 13", cursor="hand2", command=run_ejercicio13)
 button13.grid(row=3, column=1, sticky="ew", padx=10, pady=5)
 
-button14 = tk.Button(root, text="Ejercicio 14", command=run_ejercicio14)
+button14 = tk.Button(root, text="Ejercicio 14", cursor="hand2", command=run_ejercicio14)
 button14.grid(row=4, column=1, sticky="ew", padx=10, pady=5)
 
-button15 = tk.Button(root, text="Ejercicio 15", command=run_ejercicio15)
+button15 = tk.Button(root, text="Ejercicio 15", cursor="hand2", command=run_ejercicio15)
 button15.grid(row=5, column=1, sticky="ew", padx=10, pady=5)
 
-button16 = tk.Button(root, text="Ejercicio 16", command=run_ejercicio16)
+button16 = tk.Button(root, text="Ejercicio 16", cursor="hand2", command=run_ejercicio16)
 button16.grid(row=6, column=1, sticky="ew", padx=10, pady=5)
 """
-button17 = tk.Button(root, text="Ejercicio 17", command=run_ejercicio17)
+button17 = tk.Button(root, text="Ejercicio 17", cursor="hand2", command=run_ejercicio17)
 button17.grid(row=7, column=1, sticky="ew", padx=10, pady=5)
 
-button18 = tk.Button(root, text="Ejercicio 18", command=run_ejercicio18)
+button18 = tk.Button(root, text="Ejercicio 18", cursor="hand2", command=run_ejercicio18)
 button18.grid(row=8, column=1, sticky="ew", padx=10, pady=5)
 
-button19 = tk.Button(root, text="Ejercicio 19", command=run_ejercicio19)
+button19 = tk.Button(root, text="Ejercicio 19", cursor="hand2", command=run_ejercicio19)
 button19.grid(row=9, column=1, sticky="ew", padx=10, pady=5)
 
-button20 = tk.Button(root, text="Ejercicio 20", command=run_ejercicio20)
+button20 = tk.Button(root, text="Ejercicio 20", cursor="hand2", command=run_ejercicio20)
 button20.grid(row=10, column=1, sticky="ew", padx=10, pady=5)"""
 
-exitbutton = tk.Button(root, text="Salir Del Menú", command=exit)
+exitbutton = tk.Button(root, text="Salir Del Menú", cursor="hand2", command=exit)
 exitbutton.grid(row=21, column=1, sticky="ew", padx=10, pady=5)
 
 root.mainloop()
