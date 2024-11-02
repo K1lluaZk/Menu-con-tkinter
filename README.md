@@ -24,7 +24,7 @@ Tkinter (preinstalado con Python en la mayoría de las distribuciones)
 Las contribuciones son bienvenidas. Si tienes alguna sugerencia o quieres mejorar algún ejercicio, siéntete libre de abrir un pull request.
 
 ## Autor
-Desarrollado por Mario.
+Desarrollado por k1llua.
 
 ## Licencia
 Este proyecto está licenciado bajo la Licencia MIT.
