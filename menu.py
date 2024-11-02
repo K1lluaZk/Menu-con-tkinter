@@ -1,14 +1,13 @@
 import tkinter as tk
 
-#Mario De Jesus Suero
+#Grupo 2
+# Mario De Jesus Suero De Leon 2024-0263
+# Gabriel Sánchez Reynoso 2024-0269
+# Idelka Rodriguez 2024-0255
+# Danuel Ezequiel Cuevas Tejeda 2024-0250
+
+
 #Programacion Orientada En Objetos
-
-def abrir_menu():
-    ventana_inicio.destroy()
-    
-
-
-
 def run_ejercicio1():
     try:
         print("-----------------------------------------")
@@ -112,8 +111,12 @@ def run_ejercicio1():
             
         persona1.presentar_documento()
         persona1.descansar()
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
     except ValueError: 
         print("Error en el ejercicio")
+    
         
 def run_ejercicio2():
     print("-----------------------------------------")
@@ -167,6 +170,10 @@ def run_ejercicio2():
 
         cuenta1.mostrar()
         cuenta2.mostrar()
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+    
     except ValueError: 
         print("Error En El Ejercicio")
 
@@ -229,6 +236,10 @@ def run_ejercicio3():
         print("Resta:", resta.mostrar())
         print("Multiplicación:", multiplicacion.mostrar())
         print("División:", division.mostrar())
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+    
     except ValueError:
         print("Error En El Ejercicio")
 
@@ -283,8 +294,13 @@ def run_ejercicio4():
     print("Resta:", resta.mostrar())
     print("Multiplicación:", multiplicacion.mostrar())
     print("División:", division.mostrar())
+    print("---------------------------------------------")
+    print("Ejercicio Terminado De Ejecutar Con Exito")
+    print("---------------------------------------------")
+   
  except ValueError:
      print("Error En El Ejercicio")
+     
 def run_ejercicio5():
     print("-----------------------------------------")
     print("Ejercicio Ejecutandose")
@@ -345,16 +361,16 @@ def run_ejercicio5():
                 
         
         banco = Banco()
-
         banco.operar()
-
         banco.mostrar_clientes()
-
         banco.deposito_total()
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+        
     except ValueError:
      print("Error En El Ejercicio")
 
-#Gabriel Sanchez Reynoso
 def run_ejercicio6():
     print("-----------------------------------------")
     print("Ejercicio Ejecutandose")
@@ -406,6 +422,9 @@ def run_ejercicio6():
         # Mostrar información
         caja_ahorro.mostrar_info()
         plazo_fijo.mostrar_info()
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
 
     except ValueError:
      print("Error En El Ejercicio")
@@ -420,31 +439,41 @@ def run_ejercicio7():
     programa debe informar de cuantos han aprobado y cuantos han 
     suspendido."""
     try:
-        
         aprobados = 0
         suspendidos = 0
         contador = 0
         resultados = []
 
         while contador < 10:
-            nota = float(input(f"Ingrese la nota del alumno {contador + 1}: "))
+            while True: 
+                try:
+                    nota = float(input(f"Ingrese la nota del alumno {contador + 1}: "))
+                    break 
+                except ValueError:
+                        print("Entrada inválida. Por favor, ingrese un número válido para la nota.")
+
             if nota >= 70:
                 aprobados += 1
                 resultados.append(f"Alumno {contador + 1}: Aprobado")
             else:
                 suspendidos += 1
                 resultados.append(f"Alumno {contador + 1}: Suspendido")
+
             contador += 1
 
-        # Impresión de resultados
         print("\nResultados individuales:")
         for resultado in resultados:
             print(resultado)
 
         print(f"\nTotal de aprobados: {aprobados}")
         print(f"Total de suspendidos: {suspendidos}")
-    except ValueError:
-     print("Error En El Ejercicio")
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+
+    except Exception as e:
+       print(f"Error en el ejercicio: {e}")
+
      
 def run_ejercicio8():
     print("-----------------------------------------")
@@ -455,16 +484,32 @@ def run_ejercicio8():
     menos de 500 y cuantos más de 500. Informar también del total que 
     gasta la empresa en pagar a sus empleados."""
     try:
-       
         menos_500 = 0
         mas_500 = 0
         total_gasto = 0
 
-        n = int(input("Ingrese la cantidad de empleados: "))
+        while True:
+            try:
+                n = int(input("Ingrese la cantidad de empleados: "))
+                if n <= 0:
+                    print("La cantidad de empleados debe ser un número positivo.")
+                    continue
+                break 
+            except ValueError:
+                print("Entrada inválida. Por favor, ingrese un número entero para la cantidad de empleados.")
 
         contador = 0
         while contador < n:
-            sueldo = float(input("Ingrese el sueldo del empleado: "))
+            while True:
+                try:
+                    sueldo = float(input(f"Ingrese el sueldo del empleado {contador + 1}: "))
+                    if sueldo < 0:
+                        print("El sueldo no puede ser negativo. Inténtelo de nuevo.")
+                        continue
+                    break  
+                except ValueError:
+                    print("Entrada inválida. Por favor, ingrese un número válido para el sueldo.")
+
             if sueldo < 500:
                 menos_500 += 1
             else:
@@ -475,8 +520,13 @@ def run_ejercicio8():
         print(f"Empleados que ganan menos de 500: {menos_500}")
         print(f"Empleados que ganan 500 o más: {mas_500}")
         print(f"Gasto total de la empresa: {total_gasto}")
-    except ValueError:
-     print("Error En El Ejercicio")
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+
+    except Exception as e:
+        print(f"Error en el ejercicio: {e}")
+
      
 def run_ejercicio9():
     print("-----------------------------------------")
@@ -485,32 +535,42 @@ def run_ejercicio9():
     """Escribir un programa que solicite ingresar la nota de 10 alumnos, el programa debe 
     informar de cuantos han aprobado y cuantos han suspendido."""
     try:
-     
         aprobados = 0
         suspendidos = 0
         contador = 0
         resultados = []
 
         while contador < 10:
-            nota = float(input(f"Ingrese la nota del alumno {contador + 1}: "))
+            while True: 
+                try:
+                    nota = float(input(f"Ingrese la nota del alumno {contador + 1}: "))
+                    break 
+                except ValueError:
+                        print("Entrada inválida. Por favor, ingrese un número válido para la nota.")
+
             if nota >= 70:
                 aprobados += 1
                 resultados.append(f"Alumno {contador + 1}: Aprobado")
             else:
                 suspendidos += 1
                 resultados.append(f"Alumno {contador + 1}: Suspendido")
+
             contador += 1
 
-        # Impresión de resultados
         print("\nResultados individuales:")
         for resultado in resultados:
             print(resultado)
 
         print(f"\nTotal de aprobados: {aprobados}")
         print(f"Total de suspendidos: {suspendidos}")
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
 
-    except ValueError:
-     print("Error En El Ejercicio")
+
+    except Exception as e:
+       print(f"Error en el ejercicio: {e}")
+
     
 #CICLO FOR 
      
@@ -521,20 +581,26 @@ def run_ejercicio10():
     """Desarrollar un programa que solicite la carga de 10 números e imprima la suma de 
     los últimos 5 valores ingresados."""
     try:
-
         numeros = []
 
         for i in range(10):
-            num = int(input("Ingrese un número: "))
-            numeros.append(num)
+            while True:
+                try:
+                    num = int(input(f"Ingrese el número {i + 1}: "))
+                    numeros.append(num)
+                    break  
+                except ValueError:
+                    print("Entrada inválida. Por favor, ingrese un número entero.")
 
-        # Sumar los últimos 5 valores
         suma_ultimos_5 = sum(numeros[-5:])
         print(f"La suma de los últimos 5 valores es: {suma_ultimos_5}")
-    except ValueError:
-     print("Error En El Ejercicio")
-     
-#Idelka  
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+
+    except Exception as e:
+        print(f"Error en el ejercicio: {e}")
+
 def run_ejercicio11():
     print("-----------------------------------------")
     print("Ejercicio Ejecutandose")
@@ -542,18 +608,28 @@ def run_ejercicio11():
     """11. Realizar un programa que solicite la carga de un valor entero del 1 al 10. Mostrar
     después la tabla de multiplicar de dicho número."""
 
-    try:
-     
-        def tabla_multiplicar():
-            print ("Ejercicio 11")
+    def tabla_multiplicar():
+        
+    
+        while True:
+            try:
+                numero = int(input("Ingrese un número entero del 1 al 10: "))
+                if 1 <= numero <= 10:
+                    break  
+                else:
+                    print("El número debe estar entre 1 y 10.")
+            except ValueError:
+                print("Entrada inválida. Por favor, ingrese un número entero.")
 
-            numero = int(input("Ingrese un número entero del 1 al 10: "))
-            print(f"Tabla de multiplicar del número {numero}:")
-            for i in range(1, 11):
-                print(f"{numero} x {i} = {numero * i}")      
-        tabla_multiplicar()
-    except ValueError:
-     print("Error En El Ejercicio")
+        print(f"\nTabla de multiplicar del número {numero}:")
+        for i in range(1, 11):
+            print(f"{numero} x {i} = {numero * i}")
+
+    tabla_multiplicar()
+    print("---------------------------------------------")
+    print("Ejercicio Terminado De Ejecutar Con Exito")
+    print("---------------------------------------------")
+
          
 def run_ejercicio12():
     print("-----------------------------------------")
@@ -562,38 +638,51 @@ def run_ejercicio12():
     """12. Realizar un programa que pida ingresar dos datos enteros (coordenadas x e y). 
     comenzar el programa se pedirá ingresar el total de puntos a procesar. Informar de
     cuantos puntos se han ingresado en cada uno de los cuatro cuadrantes."""
-    try:
+    def puntos_cuadrantes():
 
-        def puntos_cuadrantes():
-            print ("Ejercicio 12")
+        while True:
+            try:
+                total_puntos = int(input("Ingrese el total de puntos a procesar: "))
+                break
+            except ValueError:
+                print("Entrada inválida. Por favor, ingrese un número entero.")
 
-            total_puntos = int(input("Ingrese el total de puntos a procesar: "))
-            cuadrantes = [0, 0, 0, 0]  # cuadrantes[0] -> primer cuadrante, cuadrantes[1] -> segundo cuadrante, etc.
+        cuadrantes = [0, 0, 0, 0]  # cuadrantes[0] -> primer cuadrante, cuadrantes[1] -> segundo cuadrante, etc.
+        print('----------------------------------------------------------------------------------------------')
+
+        for i in range(total_puntos):
+            while True:
+                try:
+                    x = float(input(f"Ingrese la coordenada x del punto {i + 1}: "))
+                    y = float(input(f"Ingrese la coordenada y del punto {i + 1}: "))
+                    break  
+                except ValueError:
+                    print("Entrada inválida. Por favor, ingrese valores numéricos para x e y.")
+
+        
+            if x > 0 and y > 0:
+                cuadrantes[0] += 1
+            elif x < 0 and y > 0:
+                cuadrantes[1] += 1
+            elif x < 0 and y < 0:
+                cuadrantes[2] += 1
+            elif x > 0 and y < 0:
+                cuadrantes[3] += 1
             print('----------------------------------------------------------------------------------------------')
-            
-            for i in range(total_puntos):
-                x = float(input(f"Ingrese la coordenada x del punto {i + 1}: "))
-                y = float(input(f"Ingrese la coordenada y del punto {i + 1}: "))
-                
-                print('----------------------------------------------------------------------------------------------')
 
-                if x > 0 and y > 0:
-                    cuadrantes[0] += 1
-                elif x < 0 and y > 0:
-                    cuadrantes[1] += 1
-                elif x < 0 and y < 0:
-                    cuadrantes[2] += 1
-                elif x > 0 and y < 0:
-                    cuadrantes[3] += 1
-                print('----------------------------------------------------------------------------------------------')
+        print(f"Puntos en el primer cuadrante: {cuadrantes[0]}")
+        print(f"Puntos en el segundo cuadrante: {cuadrantes[1]}")
+        print(f"Puntos en el tercer cuadrante: {cuadrantes[2]}")
+        print(f"Puntos en el cuarto cuadrante: {cuadrantes[3]}")
 
-            print(f"Puntos en el primer cuadrante: {cuadrantes[0]}")
-            print(f"Puntos en el segundo cuadrante: {cuadrantes[1]}")
-            print(f"Puntos en el tercer cuadrante: {cuadrantes[2]}")
-            print(f"Puntos en el cuarto cuadrante: {cuadrantes[3]}")
+    try:
         puntos_cuadrantes()
-    except ValueError:
-     print("Error En El Ejercicio")
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+    except Exception as e:
+        print(f"Error en el ejercicio: {e}")
+
         
 def run_ejercicio13():
     print("-----------------------------------------")
@@ -602,39 +691,55 @@ def run_ejercicio13():
     """13. Realizar un programa que lea los lados de n triángulos. Informar después de cada
     triángulo si es equilátero (tres lados iguales), isósceles (dos lados iguales) o
     escaleno (ningún lado igual). Informar después del total de triángulos de cada tipo."""
-    try:
+    def tipo_triangulo():
+        
 
-        def tipo_triangulo():
-            print ("Ejercicio 13")
+        while True:
+            try:
+                n = int(input("Ingrese la cantidad de triángulos a procesar: "))
+                break
+            except ValueError:
+                print("Entrada inválida. Por favor, ingrese un número entero.")
 
-            n = int(input("Ingrese la cantidad de triángulos a procesar: "))
-            equilateros = 0
-            isosceles = 0
-            escalenos = 0
+        equilateros = 0
+        isosceles = 0
+        escalenos = 0
 
-            print('-------------------------------------------------------------------------------------------')
-            for i in range(1, n + 1):
-                lado1 = float(input(f"Ingrese la longitud del lado 1 del triángulo {i}: "))
-                lado2 = float(input(f"Ingrese la longitud del lado 2 del triángulo {i}: "))
-                lado3 = float(input(f"Ingrese la longitud del lado 3 del triángulo {i}: "))
-                
-                if lado1 == lado2 == lado3:
-                    print(f"El triángulo {i} es equilátero.")
-                    equilateros += 1
-                elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
-                    print(f"El triángulo {i} es isósceles.")
-                    isosceles += 1
-                else:
-                    print(f"El triángulo {i} es escaleno.")
-                    escalenos += 1
+        print('-------------------------------------------------------------------------------------------')
+        for i in range(1, n + 1):
+            while True:
+                try:
+                    lado1 = float(input(f"Ingrese la longitud del lado 1 del triángulo {i}: "))
+                    lado2 = float(input(f"Ingrese la longitud del lado 2 del triángulo {i}: "))
+                    lado3 = float(input(f"Ingrese la longitud del lado 3 del triángulo {i}: "))
+                    break  
+                except ValueError:
+                    print("Entrada inválida. Por favor, ingrese valores numéricos para los lados.")
+
             
-            print('-------------------------------------------------------------------------------------------')
-            print(f"Total de triángulos equiláteros: {equilateros}")
-            print(f"Total de triángulos isósceles: {isosceles}")
-            print(f"Total de triángulos escalenos: {escalenos}")
+            if lado1 == lado2 == lado3:
+                print(f"El triángulo {i} es equilátero.")
+                equilateros += 1
+            elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
+                print(f"El triángulo {i} es isósceles.")
+                isosceles += 1
+            else:
+                print(f"El triángulo {i} es escaleno.")
+                escalenos += 1
+
+        print('-------------------------------------------------------------------------------------------')
+        print(f"Total de triángulos equiláteros: {equilateros}")
+        print(f"Total de triángulos isósceles: {isosceles}")
+        print(f"Total de triángulos escalenos: {escalenos}")
+
+    try:
         tipo_triangulo()
-    except ValueError:
-       print("Error En El Ejercicio")
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+    except Exception as e:
+        print(f"Error en el ejercicio: {e}")
+
 
 #Funciones
 
@@ -647,22 +752,36 @@ def run_ejercicio14():
     de dos valores y muestre el producto de los mismos. Deberán llamar a estas dos
     funciones desde el bloque principal (Fuera de toda función, como en el ejemplo
     realizado al principio de este tema)."""
+    def cuadrado_valor():
+        while True:
+            try:
+                valor = int(input("Ingrese un valor entero: "))
+                cuadrado = valor ** 2
+                print(f"El cuadrado de {valor} es: {cuadrado}")
+                break  
+            except ValueError:
+                print("Entrada inválida. Por favor, ingrese un número entero.")
+
+    def producto_valores():
+        while True:
+            try:
+                valor1 = float(input("Ingrese el primer valor: "))
+                valor2 = float(input("Ingrese el segundo valor: "))
+                producto = valor1 * valor2
+                print(f"El producto de {valor1} y {valor2} es: {producto}")
+                break  
+            except ValueError:
+                print("Entrada inválida. Por favor, ingrese valores numéricos.")
+
     try:
-
-        def cuadrado_valor():
-            valor = int(input("Ingrese un valor entero: "))
-            cuadrado = valor ** 2
-            print(f"El cuadrado de {valor} es: {cuadrado}")
         cuadrado_valor()
-
-        def producto_valores():
-            valor1 = float(input("Ingrese el primer valor: "))
-            valor2 = float(input("Ingrese el segundo valor: "))
-            producto = valor1 * valor2
-            print(f"El producto de {valor1} y {valor2} es: {producto}")
         producto_valores()
-    except ValueError:
-     print("Error En El Ejercicio")
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+    except Exception as e:
+        print(f"Error en el ejercicio: {e}")
+
      
 def run_ejercicio15():
     print("-----------------------------------------")
@@ -671,9 +790,7 @@ def run_ejercicio15():
     """15. Realizar un programa que tenga una función que reciba un string como parámetro.
     Debe mostrar la cantidad de vocales que tiene dicho string. Se deberá llamar 3
     veces desde el bloque principal, con 3 strings diferentes."""
-
     try:
-
         def contar_vocales(cadena):
             """Función que cuenta la cantidad de vocales en un string."""
             vocales = 'aeiouAEIOU'
@@ -682,32 +799,32 @@ def run_ejercicio15():
                 if letra in vocales:
                     contador += 1
             return contador
-        
+
+        def ejercicio15():
+            """Función que ejecuta el ejercicio 15."""
+            try:
+                string1 = input("Ingresa el primer string: ")
+                string2 = input("Ingresa el segundo string: ")
+                string3 = input("Ingresa el tercer string: ")
+
+                vocales_string1 = contar_vocales(string1)
+                vocales_string2 = contar_vocales(string2)
+                vocales_string3 = contar_vocales(string3)
+
+                print(f"El string '{string1}' tiene {vocales_string1} vocales.")
+                print(f"El string '{string2}' tiene {vocales_string2} vocales.")
+                print(f"El string '{string3}' tiene {vocales_string3} vocales.")
+            except Exception as e:
+                print(f"Ocurrió un error: {e}")
+
+        ejercicio15()
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
     except ValueError:
-     print("Error En El Ejercicio")
-     
-    def ejercicio15():
-        """Función que ejecuta el ejercicio 15."""
-        try:
-            string1 = input("Ingresa el primer string: ")
-            string2 = input("Ingresa el segundo string: ")
-            string3 = input("Ingresa el tercer string: ")
+        print("Ocurrio Un Error")
 
-            # Llamada a la función contar_vocales con tres strings diferentes
-            vocales_string1 = contar_vocales(string1)
-            vocales_string2 = contar_vocales(string2)
-            vocales_string3 = contar_vocales(string3)
 
-            # Mostrar la cantidad de vocales en cada string
-            print(f"El string '{string1}' tiene {vocales_string1} vocales.")
-            print(f"El string '{string2}' tiene {vocales_string2} vocales.")
-            print(f"El string '{string3}' tiene {vocales_string3} vocales.")
-        except Exception as e:
-            print(f"Ocurrió un error: {e}")
-            
-    ejercicio15()
-    
-#Danuel
 def run_ejercicio16():
     print("-----------------------------------------")
     print("Ejercicio Ejecutandose")
@@ -754,6 +871,9 @@ def run_ejercicio16():
             print("Valores:", valores)
             print("Valores negativos:", negativos)
             print("Valores positivos:", positivos)
+            print("---------------------------------------------")
+            print("Ejercicio Terminado De Ejecutar Con Exito")
+            print("---------------------------------------------")
 
         if __name__ == "__main__":
             main()
@@ -801,6 +921,9 @@ def run_ejercicio17():
             print("la cantidad de personas menores son: ",menorescontador)
                         
         clasificacion(edades())
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
     
     except ValueError:
         print("Error En El Ejercicio")
@@ -832,6 +955,9 @@ def run_ejercicio18():
             print("Palabra en minusculas: ", minuscula)
             print("Palabra en capitalizado: ", capitalizada)
         formas(carga())
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
     except ValueError:
         print("Error En El Ejercicio")
 
@@ -876,6 +1002,9 @@ def run_ejercicio19():
                 else:
                     print ("Intentelo nuevamente")
         usuario()
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
     except ValueError:
         print("Error En El Ejercicio")    
     
@@ -916,103 +1045,215 @@ def run_ejercicio20():
                     print("Por favor, ingresa un número válido.")  
         
         admin()
-        
+        print("---------------------------------------------")
+        print("Ejercicio Terminado De Ejecutar Con Exito")
+        print("---------------------------------------------")
+            
     except ValueError:
        print("Error")
+       
 
+def abrir_menuprincipal():
+    ventana_inicio.destroy()
+
+    
+#Segunda ventana
+    global menuinicial
+    menuinicial = tk.Toplevel()
+    menuinicial.title("Menú Principal")
+    menuinicial.geometry("")
+    menuinicial.resizable(False,False)
+    
+    mensaje_menu_principal = tk.Label(menuinicial, text="Este es el Menú Principal", font=("Arial", 14))
+    mensaje_menu_principal.grid(row=0, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta0 = tk.Label(menuinicial, text="Programación Orientada a Objetos (POO)")
+    etiqueta0.grid(row=1, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta1 = tk.Label(menuinicial, text="1- Definir la clase Persona con atributos y métodos.")
+    etiqueta1.grid(row=2, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta2 = tk.Label(menuinicial, text="2- Crear la clase Cuenta con métodos de ingreso, reintegro y transferencia.")
+    etiqueta2.grid(row=3, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta3 = tk.Label(menuinicial, text="3- Implementar la clase Fracción con métodos para operaciones básicas.")
+    etiqueta3.grid(row=4, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta4 = tk.Label(menuinicial, text="4- Desarrollar la clase Complejo con métodos para operaciones.")
+    etiqueta4.grid(row=5, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta5 = tk.Label(menuinicial, text="5- Crear las clases Cliente y Banco para manejo de depósitos y extracciones.")
+    etiqueta5.grid(row=6, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta6 = tk.Label(menuinicial, text="6- Desarrollar la clase Cuenta con subclases PlazoFijo y CajaAhorro.")
+    etiqueta6.grid(row=7, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta7 = tk.Label(menuinicial, text="Ciclos")
+    etiqueta7.grid(row=8, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta8 = tk.Label(menuinicial, text="7- Solicitar notas de 10 alumnos e informar aprobados y suspendidos.")
+    etiqueta8.grid(row=9, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta9 = tk.Label(menuinicial, text="8- Registrar sueldos de empleados e informar sobre sueldos y total gastado.")
+    etiqueta9.grid(row=10, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta10 = tk.Label(menuinicial, text="9- Solicitar notas de 10 alumnos e informar aprobados y suspendidos (repetido).")
+    etiqueta10.grid(row=11, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta11 = tk.Label(menuinicial, text=" 10- Cargar 10 números e imprimir la suma de los últimos 5.")
+    etiqueta11.grid(row=12, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta12 = tk.Label(menuinicial, text="11- Solicitar un número del 1 al 10 y mostrar su tabla de multiplicar.")
+    etiqueta12.grid(row=13, column=0, sticky="ew", padx=10, pady=5)
+    
+    etiqueta13 = tk.Label(menuinicial, text="12- Ingresar coordenadas x e y y contar puntos en cuadrantes.")
+    etiqueta13.grid(row=1, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta14 = tk.Label(menuinicial, text="13- Leer lados de n triángulos e informar su clasificación.")
+    etiqueta14.grid(row=2, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta15 = tk.Label(menuinicial, text="Funciones")
+    etiqueta15.grid(row=3, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta16 = tk.Label(menuinicial, text="14- Crear funciones para calcular cuadrado y producto de enteros.")
+    etiqueta16.grid(row=4, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta17 = tk.Label(menuinicial, text="15- Desarrollar una función que cuente vocales en un string.")
+    etiqueta17.grid(row=5, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta18 = tk.Label(menuinicial, text="16- Cargar una lista de n enteros y separar positivos y negativos.")
+    etiqueta18.grid(row=6, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta19 = tk.Label(menuinicial, text="17- Recibir edades y contar mayores de 18.")
+    etiqueta19.grid(row=7, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta20 = tk.Label(menuinicial, text="Manipulación de Cadenas")
+    etiqueta20.grid(row=8, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta21 = tk.Label(menuinicial, text="18- Solicitar un string y mostrar su longitud y manipulación de casos.")
+    etiqueta21.grid(row=9, column=1, sticky="ew", padx=10, pady=5)
+
+    etiqueta22 = tk.Label(menuinicial, text="Validación y Juegos")
+    etiqueta22.grid(row=10, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta23 = tk.Label(menuinicial, text="19- Crear un módulo de validación de nombres de usuario con criterios específicos.")
+    etiqueta23.grid(row=11, column=1, sticky="ew", padx=10, pady=5)
+    
+    etiqueta24 = tk.Label(menuinicial, text="20- Desarrollar un juego de adivinanza de números.")
+    etiqueta24.grid(row=12, column=1, sticky="ew", padx=10, pady=5)
+    
+    boton_abrir_ejercicios = tk.Button(menuinicial, text="Ejercicios", command=abrir_menu_ejercicios, width=10)
+    boton_abrir_ejercicios.grid(row=13, column=1, sticky="ew", padx=10, pady=5)
+
+
+
+#Tercera ventana
+def abrir_menu_ejercicios():
+
+    menuinicial.withdraw() 
+    
+    global root
+    root = tk.Toplevel()
+    root.title("Menú de Ejercicios")
+    root.geometry("")
+    root.resizable(False,False)
+
+    
+    
+    
+    etiqueta = tk.Label(root, text= "Menu De Ejercicios")
+    etiqueta.grid(row=0)
+
+    button1 = tk.Button(root, text="Ejercicio 1", cursor="hand2", command=run_ejercicio1)
+    button1.grid(row=1, column=0, sticky="ew", padx=10, pady=5)
+
+    button2 = tk.Button(root, text="Ejercicio 2", cursor="hand2", command=run_ejercicio2)
+    button2.grid(row=2, column=0, sticky="ew", padx=10, pady=5)
+
+    button3 = tk.Button(root, text="Ejercicio 3", cursor="hand2", command=run_ejercicio3)
+    button3.grid(row=3, column=0, sticky="ew", padx=10, pady=5)
+
+    button4 = tk.Button(root, text="Ejercicio 4", cursor="hand2", command=run_ejercicio4)
+    button4.grid(row=4, column=0, sticky="ew", padx=10, pady=5)
+
+    button5 = tk.Button(root, text="Ejercicio 5", cursor="hand2", command=run_ejercicio5)
+    button5.grid(row=5, column=0, sticky="ew", padx=10, pady=5)
+
+    button6 = tk.Button(root, text="Ejercicio 6", cursor="hand2", command=run_ejercicio6)
+    button6.grid(row=6, column=0, sticky="ew", padx=10, pady=5)
+
+    button7 = tk.Button(root, text="Ejercicio 7", cursor="hand2", command=run_ejercicio7)
+    button7.grid(row=7, column=0, sticky="ew", padx=10, pady=5)
+
+    button8 = tk.Button(root, text="Ejercicio 8", cursor="hand2", command=run_ejercicio8)
+    button8.grid(row=8, column=0, sticky="ew", padx=10, pady=5)
+
+    button9 = tk.Button(root, text="Ejercicio 9", cursor="hand2", command=run_ejercicio9)
+    button9.grid(row=9, column=0, sticky="ew", padx=10, pady=5)
+
+    button10 = tk.Button(root, text="Ejercicio 10", cursor="hand2", command=run_ejercicio10)
+    button10.grid(row=10, column=0, sticky="ew", padx=10, pady=5)
+
+    button11 = tk.Button(root, text="Ejercicio 11", cursor="hand2", command=run_ejercicio11)
+    button11.grid(row=1, column=1, sticky="ew", padx=10, pady=5)
+
+    button12 = tk.Button(root, text="Ejercicio 12", cursor="hand2", command=run_ejercicio12)
+    button12.grid(row=2, column=1, sticky="ew", padx=10, pady=5)
+
+    button13 = tk.Button(root, text="Ejercicio 13", cursor="hand2", command=run_ejercicio13)
+    button13.grid(row=3, column=1, sticky="ew", padx=10, pady=5)
+
+    button14 = tk.Button(root, text="Ejercicio 14", cursor="hand2", command=run_ejercicio14)
+    button14.grid(row=4, column=1, sticky="ew", padx=10, pady=5)
+
+    button15 = tk.Button(root, text="Ejercicio 15", cursor="hand2", command=run_ejercicio15)
+    button15.grid(row=5, column=1, sticky="ew", padx=10, pady=5)
+
+    button16 = tk.Button(root, text="Ejercicio 16", cursor="hand2", command=run_ejercicio16)
+    button16.grid(row=6, column=1, sticky="ew", padx=10, pady=5)
+
+    button17 = tk.Button(root, text="Ejercicio 17", cursor="hand2", command=run_ejercicio17)
+    button17.grid(row=7, column=1, sticky="ew", padx=10, pady=5)
+
+    button18 = tk.Button(root, text="Ejercicio 18", cursor="hand2", command=run_ejercicio18)
+    button18.grid(row=8, column=1, sticky="ew", padx=10, pady=5)
+
+    button19 = tk.Button(root, text="Ejercicio 19", cursor="hand2", command=run_ejercicio19)
+    button19.grid(row=9, column=1, sticky="ew", padx=10, pady=5)
+
+    button20 = tk.Button(root, text="Ejercicio 20", cursor="hand2", command=run_ejercicio20)
+    button20.grid(row=10, column=1, sticky="ew", padx=10, pady=5)
+
+    exitbutton = tk.Button(root, text="Salir Del Menú", cursor="hand2", command=exit)
+    exitbutton.grid(row=11, column=1, sticky="ew", padx=10, pady=5)
+
+    boton_regresar = tk.Button(root, text="Regresar al Menú Principal", command=regresar_al_menu_principal, width=20)
+    boton_regresar.grid(row=11, column=0, sticky="ew", padx=10, pady=5)
+    
+
+    
+def regresar_al_menu_principal():
+    root.destroy()  
+    menuinicial.deiconify()
+    
+
+#Primera ventana
 ventana_inicio = tk.Tk()
 ventana_inicio.title("Pantalla De Inicio")
-ventana_inicio.geometry("300x300")
+ventana_inicio.geometry("")
+ventana_inicio.resizable(False, False)
 
 mensaje_bienvenida = tk.Label(ventana_inicio, text="Bienvenido A Nuestro Menu", font=("Arial", 14))
 mensaje_bienvenida.pack(pady=20)
 
-
-
-
-boton_inicio = tk.Button(ventana_inicio, text="Iniciar", command=abrir_menu, width=10)
+boton_inicio = tk.Button(ventana_inicio, text="Iniciar", command=abrir_menuprincipal, width=10)
 boton_inicio.pack(pady=20)
 
-grupo_label = tk.Label(ventana_inicio, text="Grupo 1\nMario Suero\nGabriel Sanchez\nIdelka Rodriguez\nDanuel Cuevas", anchor='s')
+grupo_label = tk.Label(ventana_inicio, text="Grupo 2\nMario Suero\nGabriel Sanchez\nIdelka Rodriguez\nDanuel Cuevas", anchor='s')
 grupo_label.pack(side=tk.BOTTOM, pady=10)
 
 ventana_inicio.mainloop()
 
 
-root = tk.Tk()
-root.title("Menú")
-root.geometry("400x500")
 
-
-
-
-etiqueta = tk.Label(root, text= "Menu De Ejercicios")
-etiqueta.grid(row=0)
-
-
-button1 = tk.Button(root, text="Ejercicio 1", cursor="hand2", command=run_ejercicio1)
-button1.grid(row=1, column=0, sticky="ew", padx=10, pady=5)
-
-button2 = tk.Button(root, text="Ejercicio 2", cursor="hand2", command=run_ejercicio2)
-button2.grid(row=2, column=0, sticky="ew", padx=10, pady=5)
-
-button3 = tk.Button(root, text="Ejercicio 3", cursor="hand2", command=run_ejercicio3)
-button3.grid(row=3, column=0, sticky="ew", padx=10, pady=5)
-
-button4 = tk.Button(root, text="Ejercicio 4", cursor="hand2", command=run_ejercicio4)
-button4.grid(row=4, column=0, sticky="ew", padx=10, pady=5)
-
-button5 = tk.Button(root, text="Ejercicio 5", cursor="hand2", command=run_ejercicio5)
-button5.grid(row=5, column=0, sticky="ew", padx=10, pady=5)
-
-button6 = tk.Button(root, text="Ejercicio 6", cursor="hand2", command=run_ejercicio6)
-button6.grid(row=6, column=0, sticky="ew", padx=10, pady=5)
-
-button7 = tk.Button(root, text="Ejercicio 7", cursor="hand2", command=run_ejercicio7)
-button7.grid(row=7, column=0, sticky="ew", padx=10, pady=5)
-
-button8 = tk.Button(root, text="Ejercicio 8", cursor="hand2", command=run_ejercicio8)
-button8.grid(row=8, column=0, sticky="ew", padx=10, pady=5)
-
-button9 = tk.Button(root, text="Ejercicio 9", cursor="hand2", command=run_ejercicio9)
-button9.grid(row=9, column=0, sticky="ew", padx=10, pady=5)
-
-button10 = tk.Button(root, text="Ejercicio 10", cursor="hand2", command=run_ejercicio10)
-button10.grid(row=10, column=0, sticky="ew", padx=10, pady=5)
-
-button11 = tk.Button(root, text="Ejercicio 11", cursor="hand2", command=run_ejercicio11)
-button11.grid(row=1, column=1, sticky="ew", padx=10, pady=5)
-
-button12 = tk.Button(root, text="Ejercicio 12", cursor="hand2", command=run_ejercicio12)
-button12.grid(row=2, column=1, sticky="ew", padx=10, pady=5)
-
-button13 = tk.Button(root, text="Ejercicio 13", cursor="hand2", command=run_ejercicio13)
-button13.grid(row=3, column=1, sticky="ew", padx=10, pady=5)
-
-button14 = tk.Button(root, text="Ejercicio 14", cursor="hand2", command=run_ejercicio14)
-button14.grid(row=4, column=1, sticky="ew", padx=10, pady=5)
-
-button15 = tk.Button(root, text="Ejercicio 15", cursor="hand2", command=run_ejercicio15)
-button15.grid(row=5, column=1, sticky="ew", padx=10, pady=5)
-
-button16 = tk.Button(root, text="Ejercicio 16", cursor="hand2", command=run_ejercicio16)
-button16.grid(row=6, column=1, sticky="ew", padx=10, pady=5)
-
-button17 = tk.Button(root, text="Ejercicio 17", cursor="hand2", command=run_ejercicio17)
-button17.grid(row=7, column=1, sticky="ew", padx=10, pady=5)
-
-button18 = tk.Button(root, text="Ejercicio 18", cursor="hand2", command=run_ejercicio18)
-button18.grid(row=8, column=1, sticky="ew", padx=10, pady=5)
-
-button19 = tk.Button(root, text="Ejercicio 19", cursor="hand2", command=run_ejercicio19)
-button19.grid(row=9, column=1, sticky="ew", padx=10, pady=5)
-
-button20 = tk.Button(root, text="Ejercicio 20", cursor="hand2", command=run_ejercicio20)
-button20.grid(row=10, column=1, sticky="ew", padx=10, pady=5)
-
-exitbutton = tk.Button(root, text="Salir Del Menú", cursor="hand2", command=exit)
-exitbutton.grid(row=11, column=1, sticky="ew", padx=10, pady=5)
-
-
-root.mainloop()
 
